@@ -10,4 +10,4 @@ import { MainComponent } from './layout/main/main.component';
   imports: [CommonModule],
   exports: [LayoutComponent]
 })
-export class CoreModule { }
+export class CoreModule {}
