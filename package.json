@@ -4,13 +4,14 @@
   "scripts": {
     "build:prod": "ng build --prod",
     "build:pub": "ng build --prod --output-path docs --base-href https://trainingit-introangular-ed2.github.io/training-projects-verotero86/",
+    "http-server": "http-server ./dist/gesprojects/ -c-1 -p4271 -a localhost -o",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
     "pub": "npm run build:pub && npm run push",
     "push": "git add * && git commit -m 'pub' && git push",
     "start:prod": "npm run build:prod && npm run http-server",
-    "start": "ng serve -o --port 4279",
+    "start": "ng serve --aot -o --port 4200",
     "test": "ng test"
   },
   "private": true,
@@ -24,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "mini.css": "^3.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
