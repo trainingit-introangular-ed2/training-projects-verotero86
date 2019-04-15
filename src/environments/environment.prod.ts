@@ -1,4 +1,4 @@
 export const environment = {
-  appName: 'GesProjects',
+  appName: 'Manage Projects',
   production: true
 };
