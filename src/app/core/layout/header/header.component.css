@@ -2,6 +2,15 @@
   color: blue;
   text-align: center;
 }
-img {
+
+.imgtitulo {
   width: 250px;
+}
+
+.sticky {
+  text-align: center;
+}
+
+img.logo {
+  width: 30px;
 }
