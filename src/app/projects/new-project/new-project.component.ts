@@ -19,11 +19,9 @@ export class NewProjectComponent implements OnInit {
   ngOnInit() {
     this.projects = environment.projects;
     this.project = { id: 0, name: ' ' };
-    this.projectId = this.projectsService.getNumProjects();
   }
 
   public saveProject() {
-    this.project.id = this.projectId;
     this.projectsService.saveProject(this.project);
   }
 }

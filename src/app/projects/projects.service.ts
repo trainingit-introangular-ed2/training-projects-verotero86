@@ -10,6 +10,13 @@ export class ProjectsService implements Projects {
   constructor() {}
 
   public saveProject(project: Project) {
+    let id = environment.projects.length + 1;
+
+    // tslint:disable-next-line: triple-equals
+    while (environment.projects.find(p => p.id == id)) {
+      id = id + 1;
+    }
+    project.id = id;
     environment.projects.push(project);
   }
 
