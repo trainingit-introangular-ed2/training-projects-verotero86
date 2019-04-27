@@ -1,14 +1,5 @@
-<form class="formulario">
-  <fieldset>
-    <section>
-      <label for="name">Nombre del proyecto</label>
-      <input name="name"
-             type="text"
-             [(ngModel)]="project.name" />
-    </section>
-  </fieldset>
-  <input routerLink="/projects"
-         value="Save"
-         type="submit"
-         (click)="saveProject()" />
-</form>
+<app-new-project-form [project]="this.project"
+                      [numProjects]="this.numProjects"
+                      [projects]="this.projects"
+                      [projectId]="this.projectId"
+                      (saveProject)="saveProject()"></app-new-project-form>

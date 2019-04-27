@@ -1,0 +1,26 @@
+<table class="tablaDatos"
+       *ngIf="projects.length>0; else empty">
+  <tr>
+    <th>Proyecto</th>
+    <th>Ver proyecto</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let project of projects">
+    <td>{{ project.name }}</td>
+    <td><span routerLink="view/{{project.id}}"><img src="./assets/ver.png" /></span></td>
+    <td><input value="Borrar"
+             type="button"
+             (click)="deleteProject.emit(project.id)" /></td>
+  </tr>
+  <tr>
+    <ng-template #empty><i>No existen proyectos</i></ng-template>
+  </tr>
+</table>
+<p>
+  <ng-template #empty><i>No existen proyectos</i></ng-template>
+</p>
+<a routerLink="new"
+   class="button">
+  <span>Nuevo proyecto</span>
+</a>
+<router-outlet></router-outlet>
