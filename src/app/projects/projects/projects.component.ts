@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs';
+import { share } from 'rxjs/operators';
 import { Project } from '../modelos/project';
 import { ProjectsService } from '../projects.service';
 
@@ -9,15 +10,18 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  public projects$: Observable<Project[]>;
   public projects: Project[];
 
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    this.projects = environment.projects;
+    this.projects$ = this.projectsService.getProjectsUrl().pipe(share());
   }
 
-  public deleteProject(id: number) {
-    this.projectsService.deleteProject(id);
+  public deleteProject(idProject: number) {
+    this.projectsService.deleteProjectUrl(idProject).subscribe(_ => {
+      this.projects$ = this.projectsService.getProjectsUrl();
+    });
   }
 }

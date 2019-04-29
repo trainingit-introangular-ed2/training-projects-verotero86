@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { Project } from '../../projects/modelos/project';
+import { ProjectsService } from '../../projects/projects.service';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,14 @@ export class HomeComponent implements OnInit {
   public numProjects = 0;
   public counterClass = 'tag secondary';
 
-  constructor() {
-    const projects = environment.projects;
-    this.numProjects = projects.length;
-  }
+  constructor(private projectsService: ProjectsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let projects: Project[];
+
+    this.projectsService.getProjectsUrl().subscribe(proyectos => {
+      projects = proyectos;
+      this.numProjects = proyectos == null ? 0 : projects.length;
+    });
+  }
 }

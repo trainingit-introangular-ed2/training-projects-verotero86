@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Project } from '../modelos/project';
 import { ProjectsService } from '../projects.service';
 
@@ -9,8 +10,7 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./viewer-project.component.css']
 })
 export class ViewerProjectComponent implements OnInit {
-  public projects: Project[];
-  public project: Project;
+  project$: Observable<Project>;
   public projectId: number;
 
   constructor(activatedRoute: ActivatedRoute, private projectsService: ProjectsService) {
@@ -18,7 +18,6 @@ export class ViewerProjectComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projects = this.projectsService.getProjects();
-    this.project = this.projectsService.viewProject(this.projectId);
+    this.project$ = this.projectsService.viewProjectUrl(this.projectId);
   }
 }

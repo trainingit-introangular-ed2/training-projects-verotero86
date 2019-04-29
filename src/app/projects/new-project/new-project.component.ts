@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 import { Project } from '../modelos/project';
 import { ProjectsService } from '../projects.service';
 
@@ -9,19 +9,15 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./new-project.component.css']
 })
 export class NewProjectComponent implements OnInit {
-  public projects: Project[];
   public project: Project;
-  public numProjects: number;
-  public projectId: number;
 
-  constructor(private projectsService: ProjectsService) {}
+  constructor(private projectsService: ProjectsService, private router: Router) {}
 
   ngOnInit() {
-    this.projects = environment.projects;
     this.project = { id: 0, name: ' ' };
   }
 
   public saveProject() {
-    this.projectsService.saveProject(this.project);
+    this.projectsService.saveProjectUrl(this.project).subscribe(_ => this.router.navigateByUrl('/projects'));
   }
 }

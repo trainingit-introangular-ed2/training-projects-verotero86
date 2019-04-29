@@ -1,1 +1,1 @@
-<app-viewer-project-form [project]="this.project"></app-viewer-project-form>
+<app-viewer-project-form [name]="(project$ | async)?.name"></app-viewer-project-form>

@@ -1,18 +1,6 @@
-<form class="formulario">
-  <fieldset>
-    <section>
-      <label for="id"> Id del proyecto </label>
-      <input name="id"
-             type="text"
-             disabled="disabled"
-             [value]="project.id" />
-    </section>
-    <section>
-      <label for="name">Nombre del proyecto</label>
-      <input name="name"
-             type="text"
-             disabled="disabled"
-             [value]="project.name" />
-    </section>
-  </fieldset>
-</form>
+<div>
+  <label for="name">Nombre del proyecto: </label>
+  <input name="name"
+         type="text"
+         [value]="name" />
+</div>
