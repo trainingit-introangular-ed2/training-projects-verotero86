@@ -12,7 +12,6 @@
           *matCellDef="let row">{{row.id}}</td>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell
           *matHeaderCellDef>Nombre</th>
@@ -37,9 +36,9 @@
     </ng-container>
 
     <tr mat-header-row
-        *matHeaderRowDef="displayedColumns"></tr>
+        *matHeaderRowDef="columnas"></tr>
     <tr mat-row
-        *matRowDef="let row; columns: displayedColumns;"></tr>
+        *matRowDef="let row; columns: columnas;"></tr>
   </table>
 
   <mat-paginator #paginator

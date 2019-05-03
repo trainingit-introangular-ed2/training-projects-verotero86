@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
   ) {}
   public numProjects = 0;
   public notes$;
-  public notes;
 
   ngOnInit() {
     let projects: Project[];

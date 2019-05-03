@@ -12,16 +12,14 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./view-project.component.css']
 })
 export class ViewProjectComponent implements OnInit {
-  project$: Observable<Project>;
+  public project$: Observable<Project>;
   public projectId: number;
 
-  /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
         return [{ title: 'Card 1', cols: 1, rows: 1 }];
       }
-
       return [{ title: 'Card 1', cols: 1, rows: 1 }];
     })
   );

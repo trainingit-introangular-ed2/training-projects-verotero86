@@ -11,11 +11,7 @@ import { ProjectsService } from '../projects.service';
 })
 export class ProjectListComponent implements OnInit {
   public projects$: Observable<Project[]>;
-  public numProjects = 0;
-  public projects: Project[];
-
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'ver', 'borrar'];
+  columnas = ['id', 'name', 'ver', 'borrar'];
 
   constructor(private projectsService: ProjectsService) {}
 
