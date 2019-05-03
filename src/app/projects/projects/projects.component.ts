@@ -11,7 +11,6 @@ import { ProjectsService } from '../projects.service';
 })
 export class ProjectsComponent implements OnInit {
   public projects$: Observable<Project[]>;
-  public projects: Project[];
 
   constructor(private projectsService: ProjectsService) {}
 

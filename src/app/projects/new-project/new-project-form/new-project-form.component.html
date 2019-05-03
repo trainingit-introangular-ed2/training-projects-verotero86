@@ -1,13 +1,13 @@
-<form class="formulario">
+<form [formGroup]="formGroup">
   <fieldset>
     <section>
       <label for="name">Nombre del proyecto</label>
       <input name="name"
              type="text"
-             [(ngModel)]="project.name" />
+             formControlName="name" />
     </section>
   </fieldset>
   <input value="Save"
          type="submit"
-         (click)="saveProject.emit()" />
+         (ngSubmit)="saveProject.emit()" />
 </form>

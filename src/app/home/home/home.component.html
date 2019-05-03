@@ -1,2 +1,3 @@
-<app-dashboard [numProjects]="this.numProjects"
-               [counterClass]="this.counterClass"></app-dashboard>
+<app-dashboard [numProjects]="numProjects"
+               [counterClass]="counterClass"
+               [notes]="(notes$ | async)"></app-dashboard>

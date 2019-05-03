@@ -1,2 +1,2 @@
-<app-filter-projects [projects]="projects$ | async"
+<app-filter-projects [projects]="(projects$ | async)"
                      (deleteProject)="this.deleteProject($event)"></app-filter-projects>

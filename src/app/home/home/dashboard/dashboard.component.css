@@ -1,3 +1,21 @@
 * {
   text-align: center;
 }
+
+ul {
+  margin-left: 35%;
+}
+
+li {
+  text-align: left;
+}
+
+i {
+  text-align: center;
+  margin-left: 43%;
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+}

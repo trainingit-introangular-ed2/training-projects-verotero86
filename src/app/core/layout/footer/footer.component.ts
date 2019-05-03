@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogsNotificationsStoreService } from '../../../projects/logs-notifications-store.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  public notes$;
 
-  constructor() { }
+  constructor(private logsNotificationsStore: LogsNotificationsStoreService) {}
 
   ngOnInit() {
+    this.notes$ = this.logsNotificationsStore.select$();
   }
-
 }

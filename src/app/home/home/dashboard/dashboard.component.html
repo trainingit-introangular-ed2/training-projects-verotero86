@@ -2,3 +2,12 @@
 <p>
   <mark [class]="counterClass">{{ numProjects }}</mark>
 </p>
+<h2>
+  Notas recibidas:
+</h2>
+<ul *ngIf="notes?.length>0; else empty">
+  <li *ngFor="let note of notes">{{ note }}</li>
+</ul>
+<p>
+  <ng-template #empty><i>No existen notas recibidas</i></ng-template>
+</p>

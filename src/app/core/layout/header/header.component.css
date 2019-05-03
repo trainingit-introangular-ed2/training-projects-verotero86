@@ -14,3 +14,8 @@
 img.logo {
   width: 30px;
 }
+body,
+html {
+  height: 100%;
+  margin: 0;
+}

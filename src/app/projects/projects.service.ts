@@ -17,7 +17,7 @@ export class ProjectsService implements Projects {
   }
 
   public saveProjectUrl(project: Project) {
-    return this.httpClient.post(environment.url, project);
+    this.httpClient.post<Project>(environment.url, project);
   }
 
   public viewProjectUrl(idProject: number): Observable<Project> {

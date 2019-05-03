@@ -1,0 +1,15 @@
+.full-width-table {
+  width: 100%;
+}
+
+input.button {
+  margin-top: 20px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: right;
+}
+
+img {
+  width: 30px;
+}

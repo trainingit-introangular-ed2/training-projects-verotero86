@@ -1,0 +1,5 @@
+<footer>
+  <ul *ngFor="let note of notes$ | async; last as isLast">
+    <li *ngIf="isLast">{{note}}</li>
+  </ul>
+</footer>

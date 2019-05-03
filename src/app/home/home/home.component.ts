@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../projects/modelos/project';
+import { NotificationsStoreService } from '../../projects/notifications-store.service';
 import { ProjectsService } from '../../projects/projects.service';
 
 @Component({
@@ -10,8 +11,9 @@ import { ProjectsService } from '../../projects/projects.service';
 export class HomeComponent implements OnInit {
   public numProjects = 0;
   public counterClass = 'tag secondary';
+  public notes$;
 
-  constructor(private projectsService: ProjectsService) {}
+  constructor(private projectsService: ProjectsService, private notificationsStore: NotificationsStoreService) {}
 
   ngOnInit() {
     let projects: Project[];
@@ -20,5 +22,7 @@ export class HomeComponent implements OnInit {
       projects = proyectos;
       this.numProjects = proyectos == null ? 0 : projects.length;
     });
+
+    this.notes$ = this.notificationsStore.select$();
   }
 }

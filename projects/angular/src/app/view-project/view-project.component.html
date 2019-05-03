@@ -1,0 +1,16 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Proyecto</h1>
+  <mat-grid-list cols="2"
+                 rowHeight="120px">
+    <mat-grid-tile *ngFor="let card of cards | async"
+                   [colspan]="card.cols"
+                   [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">
+          <h3>Nombre del proyecto:</h3>
+          <div class="name">{{(project$ | async)?.name}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   @Input() public numProjects = 0;
   @Input() public counterClass = 'tag secondary';
+  @Input() public notes = '';
   constructor() {}
 
   ngOnInit() {}

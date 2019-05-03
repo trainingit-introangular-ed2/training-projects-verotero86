@@ -1,0 +1,24 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2"
+                 rowHeight="250px">
+    <mat-grid-tile *ngFor="let card of cards | async"
+                   [colspan]="card.cols"
+                   [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+
+        <mat-card-content class="dashboard-card-content">
+          <h2>El número actual de proyectos es:</h2>
+          <h3>{{numProjects}}</h3>
+        </mat-card-content>
+        <div>Notas recibidas:</div>
+        <ul *ngIf="(notes$ | async)?.length>0; else empty">
+          <li *ngFor="let note of (notes$ | async)">{{ note }}</li>
+        </ul>
+        <p>
+          <ng-template #empty><i>No existen notas recibidas</i></ng-template>
+        </p>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
