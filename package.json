@@ -5,6 +5,7 @@
     "build:prod": "ng build --prod",
     "build:prod:angular": "ng build angular --prod",
     "build:pub": "ng build --prod --output-path docs --base-href https://trainingit-introangular-ed2.github.io/training-projects-verotero86/",
+    "build:pub:angular": "ng build angular --prod --output-path docs --base-href https://trainingit-introangular-ed2.github.io/training-projects-verotero86/",
     "http-server": "http-server ./dist/ManageProjects/ -c-1 -p4271 -a localhost -o",
     "e2e": "ng e2e",
     "lint": "ng lint",
