@@ -19,10 +19,18 @@
         </div>
       </div>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions *ngIf="projectForm.controls['name'].hasError('required'); else activado">
       <button mat-raised-button
               color="primary"
-              type="submit">Submit</button>
+              type="submit"
+              disabled="true">Submit</button>
+
     </mat-card-actions>
+    <ng-template #activado>
+      <button mat-raised-button
+              color="primary"
+              type="submit"
+              disabled="false">Submit</button></ng-template>
+
   </mat-card>
 </form>
